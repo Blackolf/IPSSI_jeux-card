@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CardController!{% endblock %}
+
+{% block body %}
+
+  {{ form_start(newCard) }}
+      {{ form_row(newCard.nom) }}
+
+      <button class="btn">save</button>
+  {{ form_end(newCard) }}
+{% endblock %}

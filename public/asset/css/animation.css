@@ -1,0 +1,17 @@
+
+.navin{
+  -webkit-animation : navin 0.2s forwards;
+  animation         : navin 0.2s forwards;
+}
+.navout{
+  -webkit-animation : navout 0.2s forwards;
+  animation         : navout 0.2s forwards;
+}
+
+.zoomout{
+  -webkit-animation        : zoomin 1s forwards;
+  animation                : zoomin 1s forwards;
+  -webkit-transform-origin : top left;
+  -ms-transform-origin     : top left;
+  transform-origin         : top left;
+}

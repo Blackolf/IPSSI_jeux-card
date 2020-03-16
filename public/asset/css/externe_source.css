@@ -1,0 +1,26 @@
+
+/* source : http://html5doctor.com/the-details-and-summary-elements/; */
+details.cos >summary:after {
+  float: left;
+  font-weight: bold;
+  padding-right: 10px ;
+  text-align: center;
+}
+
+details.cos >summary:after >div.signe{
+  content: "+";
+}
+
+details.cos[open] > summary:after {
+  padding-right: 18.5px ;
+  text-align: center;
+}
+
+details.cos[open] > summary:after >div.signe{
+  content: "-";
+}
+
+
+details.cos > summary {
+  display: block
+}

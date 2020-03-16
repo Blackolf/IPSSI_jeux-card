@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FactionController!{% endblock %}
+
+{% block body %}
+
+  {{ form_start(newFaction) }}
+      {{ form_row(newFaction.nom) }}
+
+      <button class="btn">save</button>
+  {{ form_end(newFaction) }}
+{% endblock %}
