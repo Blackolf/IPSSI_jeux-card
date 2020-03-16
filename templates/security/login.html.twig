@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+{# <div class="page">
+<div class="textzone"> #}
+
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail">Email</label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+    <label for="inputPassword">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" required>
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+
+    <button class="btn btn-lg btn-primary" type="submit">
+        Sign in
+    </button>
+
+  </form>
+  <a href="{{ path('app_register') }}">register</a><br>
+
+{% endblock %}
+{% block javascripts %}
+  {# <script type="text/javascript">
+    $(function(){
+
+      $("#registrer").click(function(){
+        console.log("btn click");
+
+        $.ajax ({
+          type: "POST",
+          url:"{{ path('app_register') }}",
+          // data: {data},
+          success: function (data) {
+
+            console.log(data);
+
+            $('#test').html(data.registrationForm);
+          }
+        });
+      });
+    });
+  </script> #}
+{% endblock %}

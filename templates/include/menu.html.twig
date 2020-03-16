@@ -1,0 +1,56 @@
+{# {% include 'language/french.html.twig'%} #}
+{% block navbar %}
+
+<div id="top">
+  <div class="nav">
+    <ul class="flex flex_row">
+      <li class="tag"><a href="{{ path("home") }}">Home</a>
+      </li>
+      <li class="tag"><a href="{{ path("faction") }}">Gestion Faction</a>
+      </li>
+      <li class="tag"><a href="{{ path("pack") }}">Gestion Pack</a>
+      </li>
+      <li class="tag"><a href="{{ path("card") }}"> Gestion Card </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+        $(function(){
+            $('li.tag a').click(function(e){
+                e.preventDefault();
+                $('nav a').removeClass('active');
+                $(this).addClass('active');
+                $("#pageContent").load($(this).attr('href'));
+            });
+        });
+
+
+
+        $('#pageContent').on('submit', 'form', function (e) {
+            e.preventDefault();
+            var form = $(this);
+
+
+            $.ajax({
+                type: "POST",
+                url: form.attr('action'),
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+
+
+                success: function success(response) {
+                    $("#pageContent").load($('.active').attr('href'));
+                    alert("Create Complete");
+                }
+            });
+        });
+
+
+
+    </script>
+
+{% endblock %}

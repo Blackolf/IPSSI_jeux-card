@@ -2,11 +2,30 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <script src="asset/js/jquery-3.4.1.js"></script>
         <title>{% block title %}Welcome!{% endblock %}</title>
+        {% include "include/inc_style.html.twig" %}
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+    {% if app.user %}
+    {% include "include/menu.html.twig" %}
+    {% endif %}
+    <div class="page">
+
+
+
+      <div class="textzone">
+        {% block body %}
+
+
+
+
+
+
+          {% endblock %}
+        </div>
+        </div>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
